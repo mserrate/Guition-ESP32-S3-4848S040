@@ -3,17 +3,13 @@ substitutions:
   music_icon:             "\U0000e91b"
   shutter_icon:           "\U0000e91d"
   vacuum_icon:            "\U0000e922"
-  thermostat_icon:        "\U0000e925"
   air_conditioner_icon:   "\U0000e93b"
 
 packages:
   #media_player: !include media_player/media_player.yaml
   vacuum: !include vacuum/vacuum_widget.yaml
   shutter: !include shutter/shutter_config.yaml
-  #thermostat: !include thermostat/thermostat_widget.yaml
   air_conditioner: !include air_conditioner/air_conditioner_widget.yaml
-  #alarm_panel: !include alarm_panel/alarm_panel.yaml
-
 
 lvgl:
   pages:
@@ -47,27 +43,27 @@ lvgl:
                   radius: 10
                   widgets:
 
-                    - button:
-                        id: media_player_page_btn
-                        x: 35
-                        align: LEFT_MID
-                        width: 100
-                        height: 100
-                        radius: 10
-                        bg_color: color_slate_blue_gray
-                        shadow_opa: TRANSP
-                        widgets:
-                          - label:
-                              align: CENTER
-                              text_color: color_steel_blue
-                              text_font: icons_90
-                              text: "${music_icon}"
-                        on_press:
-                          - lvgl.widget.hide: menu_controls_main
-                          - lvgl.page.show: 
-                              id: media_player_page
-                              animation: OUT_RIGHT
-                              time: 300ms
+                    # - button:
+                    #     id: media_player_page_btn
+                    #     x: 35
+                    #     align: LEFT_MID
+                    #     width: 100
+                    #     height: 100
+                    #     radius: 10
+                    #     bg_color: color_slate_blue_gray
+                    #     shadow_opa: TRANSP
+                    #     widgets:
+                    #       - label:
+                    #           align: CENTER
+                    #           text_color: color_steel_blue
+                    #           text_font: icons_90
+                    #           text: "${music_icon}"
+                    #     on_press:
+                    #       - lvgl.widget.hide: menu_controls_main
+                    #       - lvgl.page.show: 
+                    #           id: media_player_page
+                    #           animation: OUT_RIGHT
+                    #           time: 300ms
 
                     - button:
                         id: shutters_page_btn
@@ -126,28 +122,6 @@ lvgl:
                   widgets:
 
                     - button:
-                        id: thermostat_page_btn
-                        x: 35
-                        align: LEFT_MID
-                        width: 100
-                        height: 100
-                        radius: 10
-                        bg_color: color_slate_blue_gray
-                        shadow_opa: TRANSP
-                        widgets:
-                          - label:
-                              align: CENTER
-                              text_color: color_steel_blue
-                              text_font: icons_72
-                              text: "${thermostat_icon}"
-                        on_press:
-                          - lvgl.widget.hide: menu_controls_main
-                          - lvgl.page.show: 
-                              id: thermostat_page
-                              animation: OUT_RIGHT
-                              time: 300ms
-
-                    - button:
                         id: air_conditioner_page_btn
                         x: 170
                         align: LEFT_MID
@@ -170,25 +144,5 @@ lvgl:
                               time: 300ms
 
 
-                    - button:
-                        id: alarm_panel_page_btn
-                        x: 305
-                        align: LEFT_MID
-                        width: 100
-                        height: 100
-                        radius: 10
-                        bg_color: color_slate_blue_gray
-                        shadow_opa: TRANSP
-                        widgets:
-                          - label:
-                              align: CENTER
-                              text_color: color_steel_blue
-                              text_font: mdi_icons_72
-                              text: "${shield_away_icon}"
-                        on_press:
-                          - lvgl.widget.hide: menu_controls_main
-                          - lvgl.page.show: 
-                              id: alarm_panel_page
-                              animation: OUT_RIGHT
-                              time: 300ms
+                  
   

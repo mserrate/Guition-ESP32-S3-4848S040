@@ -119,7 +119,7 @@
   glyphs: [
     "\U0000e900", # brightness
     "\U0000e901", # saturation
-    "\U0000e925", # thermostat
+
     "\U0000e93b", # air_conditioner 
     "\U0000e936", # heating
     "\U0000e92e", # lock
@@ -219,7 +219,7 @@
     "\U0000e91b", # music
     "\U0000e91d", # shutter_close
     "\U0000e922", # vacuum
-    "\U0000e925", # thermostat
+
     "\U0000e93b", # air_conditioner
   ]
 
@@ -294,6 +294,9 @@
     "\U000F0210", # fan
     "\U000F1B18", # auto
     "\U000F0425", # off
+    "\U000F0A72", # solar-power
+    "\U000F0D3E", # transmission-tower
+    "\U000F1903", # home-lightning-bolt
   ]
 
 

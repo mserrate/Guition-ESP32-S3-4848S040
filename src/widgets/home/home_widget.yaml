@@ -1,9 +1,9 @@
 substitutions:
 
-  weather_entity: "weather.home_assistant"
-  temperature_entity: "sensor.outside_temperature"
-  humidity_entity: "sensor.outside_humidity"
-  co2_entity: "sensor.carbon_dioxide"
+  weather_entity: "weather.home"
+  solar_power_entity: "sensor.inverter_active_power"
+  grid_power_entity: "sensor.power_meter_active_power"
+  house_consumption_entity: "sensor.house_consumption_power"
 
 
   lock_icon:               "\U0000e92e"
@@ -15,10 +15,13 @@ substitutions:
   wifi_50_icon:            "\U0000e932" # wifi signal from 50% to 25%
   wifi_75_icon:            "\U0000e933" # wifi signal from 75% to 50%
   wifi_100_icon:           "\U0000e934" # wifi signal from 100% to 75% or disable
-  humidity_icon:           "\U0000e938" 
-  co2_icon:                "\U0000e937" 
-  tvoc:                    "\U0000e93a" # air quality
-  temperature_icon:        "\U0000e939" 
+  #humidity_icon:           "\U0000e938" 
+  #co2_icon:                "\U0000e937" 
+  #tvoc:                    "\U0000e93a" # air quality
+  #temperature_icon:        "\U0000e939" 
+  solar_power_icon:        "\U000F0A72" # solar-power
+  grid_consumption_icon:   "\U000F0D3E" # transmission-tower
+  home_consumption_icon:   "\U000F1903" # home-lightning-bolt
   illumination:            "\U0000e92f" # lux
   lightbulb_icon:          "\U0000e908"
 
@@ -71,42 +74,42 @@ sensor:
               format: "%.0f°"
               args: [id(weather_temp).state]
 
-  # Temperature Home Sensor
+  # Solar Power Home Sensor
   - platform: homeassistant
-    id: temperature_sensor
-    entity_id: "${temperature_entity}"
+    id: solar_power_sensor
+    entity_id: "${solar_power_entity}"
     on_value:
       then:   
         - lvgl.label.update:
-            id: temperature_sensor_label
+            id: solar_power_sensor_label
             text:
-              format: "%.1f °C"
-              args: [id(temperature_sensor).state]
+              format: "%.1f kW"
+              args: [id(solar_power_sensor).state]
 
-  # Humidity Home Sensor
+  # Grid Power Home Sensor
   - platform: homeassistant
-    id: humidity_sensor
-    entity_id: "${humidity_entity}"
+    id: grid_power_sensor
+    entity_id: "${grid_power_entity}"
     on_value:
       then:
         - lvgl.label.update:
-            id: humidity_sensor_label
+            id: grid_power_sensor_label
             text:
-              format: "%.1f %%" 
-              args: [id(humidity_sensor).state]
+              format: "%.1f kW" 
+              args: [id(grid_power_sensor).state]
 
 
-  # CO2 Home Sensor 
+  # Home Consumption Home Sensor 
   - platform: homeassistant
-    id: co2_sensor
-    entity_id: "${co2_entity}"
+    id: home_consumption_sensor
+    entity_id: "${home_consumption_entity}"
     on_value:
       then:
         - lvgl.label.update:
-            id: co2_sensor_label
+            id: home_consumption_sensor_label
             text:
-              format: "%.0f PPM"
-              args: [id(co2_sensor).state]
+              format: "%.1f kW"
+              args: [id(home_consumption_sensor).state]
 
 
 text_sensor:
@@ -410,14 +413,14 @@ lvgl:
                   shadow_opa: TRANSP
                   widgets:
                     - label:
-                        id: temperature_sensor_icon
+                        id: solar_power_sensor_icon
                         align: LEFT_MID
                         x: 20
-                        text: "${temperature_icon}"
+                        text: "${solar_power_icon}"
                         text_color: color_green
                         text_font: icons_28
                     - label:
-                        id: temperature_sensor_label
+                        id: solar_power_sensor_label
                         align: LEFT_MID
                         x: 55
                         text: " "
@@ -437,14 +440,14 @@ lvgl:
                   shadow_opa: TRANSP
                   widgets:
                     - label:
-                        id: humidity_sensor_icon
+                        id: grid_power_sensor_icon
                         align: LEFT_MID
                         x: 20
-                        text: "${humidity_icon}"
+                        text: "${grid_power_icon}"
                         text_color: color_blue
                         text_font: icons_28
                     - label:
-                        id: humidity_sensor_label
+                        id: grid_power_sensor_label
                         align: LEFT_MID
                         x: 55
                         text: " "
@@ -464,14 +467,14 @@ lvgl:
                   shadow_opa: TRANSP
                   widgets:
                     - label:
-                        id: co2_sensor_icon
+                        id: home_consumption_sensor_icon
                         align: LEFT_MID
                         x: 20
-                        text: "${co2_icon}"
+                        text: "${home_consumption_icon}"
                         text_color: color_yellow
                         text_font: icons_28
                     - label:
-                        id: co2_sensor_label
+                        id: home_consumption_sensor_label
                         align: LEFT_MID
                         x: 55
                         text: " "
