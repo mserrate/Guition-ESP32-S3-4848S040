@@ -6,6 +6,10 @@ substitutions:
   home_consumption_entity: "sensor.house_consumption_power"
 
 
+  exit_icon:               "\U0000e902"
+  settings_icon:           "\U0000e903"
+  devices_icon:            "\U0000e905"
+  home_icon:               "\U0000e906"
   lock_icon:               "\U0000e92e"
   air_conditioner_icon:    "\U0000e93b" 
   heating_icon:            "\U0000e936"
@@ -83,8 +87,8 @@ sensor:
         - lvgl.label.update:
             id: solar_power_sensor_label
             text:
-              format: "%.1f kW"
-              args: [id(solar_power_sensor).state]
+              format: "%.2f kW"
+              args: [id(solar_power_sensor).state / 1000.0]
 
   # Grid Power Home Sensor
   - platform: homeassistant
@@ -95,8 +99,8 @@ sensor:
         - lvgl.label.update:
             id: grid_power_sensor_label
             text:
-              format: "%.1f kW" 
-              args: [id(grid_power_sensor).state]
+              format: "%.2f kW" 
+              args: [id(grid_power_sensor).state / 1000.0]
 
 
   # Home Consumption Home Sensor 
@@ -108,8 +112,8 @@ sensor:
         - lvgl.label.update:
             id: home_consumption_sensor_label
             text:
-              format: "%.1f kW"
-              args: [id(home_consumption_sensor).state]
+              format: "%.2f kW"
+              args: [id(home_consumption_sensor).state / 1000.0]
 
 
 text_sensor:
@@ -410,7 +414,7 @@ lvgl:
                         x: 20
                         text: "${solar_power_icon}"
                         text_color: color_green
-                        text_font: icons_28
+                        text_font: mdi_icons_28
                     - label:
                         id: solar_power_sensor_label
                         align: LEFT_MID
@@ -437,7 +441,7 @@ lvgl:
                         x: 20
                         text: "${grid_power_icon}"
                         text_color: color_blue
-                        text_font: icons_28
+                        text_font: mdi_icons_28
                     - label:
                         id: grid_power_sensor_label
                         align: LEFT_MID
@@ -464,7 +468,7 @@ lvgl:
                         x: 20
                         text: "${home_consumption_icon}"
                         text_color: color_yellow
-                        text_font: icons_28
+                        text_font: mdi_icons_28
                     - label:
                         id: home_consumption_sensor_label
                         align: LEFT_MID
