@@ -5,10 +5,10 @@ substitutions:
   shutter_entity_3: "cover.menjador_3"
   shutter_entity_4: "cover.menjador_4"
 
-  shutter_widget_name_1: "Menjador 1"
-  shutter_widget_name_2: "Menjador 2"
-  shutter_widget_name_3: "Menjador 3"
-  shutter_widget_name_4: "Menjador 4"
+  shutter_widget_name_1: "menjador_1"
+  shutter_widget_name_2: "menjador_2"
+  shutter_widget_name_3: "menjador_3"
+  shutter_widget_name_4: "menjador_4"
 
 
   shutter_label_name_1: "Menjador 1"

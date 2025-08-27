@@ -21,7 +21,7 @@ external_components:
     refresh: 1h
 
 esphome:
-  name: esphome_display
+  name: esphome-display
   friendly_name: esphome_display
   includes:
     - <sstream>

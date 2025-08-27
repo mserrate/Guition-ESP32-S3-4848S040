@@ -3,7 +3,7 @@ substitutions:
   weather_entity: "weather.home"
   solar_power_entity: "sensor.inverter_active_power"
   grid_power_entity: "sensor.power_meter_active_power"
-  house_consumption_entity: "sensor.house_consumption_power"
+  home_consumption_entity: "sensor.house_consumption_power"
 
 
   lock_icon:               "\U0000e92e"
@@ -15,12 +15,12 @@ substitutions:
   wifi_50_icon:            "\U0000e932" # wifi signal from 50% to 25%
   wifi_75_icon:            "\U0000e933" # wifi signal from 75% to 50%
   wifi_100_icon:           "\U0000e934" # wifi signal from 100% to 75% or disable
-  #humidity_icon:           "\U0000e938" 
+  humidity_icon:           "\U0000e938" 
   #co2_icon:                "\U0000e937" 
   #tvoc:                    "\U0000e93a" # air quality
   #temperature_icon:        "\U0000e939" 
   solar_power_icon:        "\U000F0A72" # solar-power
-  grid_consumption_icon:   "\U000F0D3E" # transmission-tower
+  grid_power_icon:         "\U000F0D3E" # transmission-tower
   home_consumption_icon:   "\U000F1903" # home-lightning-bolt
   illumination:            "\U0000e92f" # lux
   lightbulb_icon:          "\U0000e908"
@@ -208,14 +208,6 @@ lvgl:
                   text_color: color_steel_blue
                   text_font: icons_24
 
-              # Alarm panel status
-              - label:
-                  id: alarm_panel_status
-                  align: RIGHT_MID
-                  x: -220
-                  text: "${shield_arming_icon}"
-                  text_color: color_steel_blue
-                  text_font: mdi_icons_24
 
         # time
         - obj:
