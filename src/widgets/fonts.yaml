@@ -169,6 +169,7 @@
     "\U0000e905", # devices
     "\U0000e906", # home
     "\U0000e907", # ceiling
+    "\U0000e91d", # shutter
     "\U0000e908", # lightbulb
     "\U0000e91a", # swipe
     "\U0000e92e", # lock

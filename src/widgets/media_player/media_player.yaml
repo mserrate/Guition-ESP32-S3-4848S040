@@ -1,5 +1,5 @@
 substitutions:
-  ha_server: "http://192.168.1.44:8123"
+  ha_server: "http://192.168.31.50:8123"
   media_player_entity: "media_player.yandex_station_m00bv9j00dc7sg"
 
   power_icon:        "\U0000e909"

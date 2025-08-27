@@ -7,12 +7,12 @@ substitutions:
   air_conditioner_icon:   "\U0000e93b"
 
 packages:
-  media_player: !include media_player/media_player.yaml
+  #media_player: !include media_player/media_player.yaml
   vacuum: !include vacuum/vacuum_widget.yaml
   shutter: !include shutter/shutter_config.yaml
-  thermostat: !include thermostat/thermostat_widget.yaml
+  #thermostat: !include thermostat/thermostat_widget.yaml
   air_conditioner: !include air_conditioner/air_conditioner_widget.yaml
-  alarm_panel: !include alarm_panel/alarm_panel.yaml
+  #alarm_panel: !include alarm_panel/alarm_panel.yaml
 
 
 lvgl:

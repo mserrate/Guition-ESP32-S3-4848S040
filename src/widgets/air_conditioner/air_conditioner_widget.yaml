@@ -2,7 +2,7 @@
 
 substitutions:
 
-  air_conditioner_entity:     "climate.hvac"
+  air_conditioner_entity:     "climate.152832117264902_climate"
 
   air_conditioner_icon:       "\U0000e93b"
   temperature_icon:           "\U0000e939"

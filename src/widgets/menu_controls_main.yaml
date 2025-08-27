@@ -66,10 +66,12 @@ lvgl:
                       align: CENTER
                       text_color: color_steel_blue
                       text_font: icons_36
-                      text: "${ceiling_icon}"
+                      #text: "${ceiling_icon}"
+                      text: "${shutter_close_icon}"
                 on_press:
                   - lvgl.page.show: 
-                      id: lights_group_page
+                      #id: lights_group_page
+                      id: shutter_group_page
                       animation: OUT_RIGHT
                       time: 300ms
                   - lvgl.button.update:

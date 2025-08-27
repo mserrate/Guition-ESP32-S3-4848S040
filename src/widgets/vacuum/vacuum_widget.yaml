@@ -1,6 +1,6 @@
 substitutions:
 
-  vacuum_entity: "vacuum.0_ground_floor"
+  vacuum_entity: "vacuum.roomba"
 
   start_icon:         "\U0000e90a"
   play_icon:          "\U0000e90a"
