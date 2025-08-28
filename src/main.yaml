@@ -1,6 +1,6 @@
 packages:
   home: !include widgets/home/home.yaml
-  lights_config: !include widgets/light/lights_config.yaml
+  #lights_config: !include widgets/light/lights_config.yaml
   devices: !include widgets/devices.yaml
   settings: !include widgets/settings.yaml
   menu_controls_main: !include widgets/menu_controls_main.yaml
