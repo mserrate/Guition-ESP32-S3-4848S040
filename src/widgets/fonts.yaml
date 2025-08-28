@@ -191,6 +191,7 @@
     "\U0000e91c", # stop
     "\U0000e923", # locate
     "\U0000e924", # docked
+    "\U0000e91d", # shutter
   ]
 
 - file: "fonts/icons_v2.ttf"
@@ -296,6 +297,8 @@
     "\U000F0425", # off
     "\U000F0A72", # solar-power
     "\U000F0D3E", # transmission-tower
+    "\U000F192C", # transmisstion-export
+    "\U000F192D", # transmisstion-export
     "\U000F1903", # home-lightning-bolt
   ]
 

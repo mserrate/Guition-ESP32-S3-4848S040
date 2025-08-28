@@ -24,7 +24,8 @@ substitutions:
   #tvoc:                    "\U0000e93a" # air quality
   #temperature_icon:        "\U0000e939" 
   solar_power_icon:        "\U000F0A72" # solar-power
-  grid_power_icon:         "\U000F0D3E" # transmission-tower
+  grid_power_export_icon:  "\U000F192C" # transmisstion-export
+  grid_power_import_icon:  "\U000F192D" # transmisstion-import
   home_consumption_icon:   "\U000F1903" # home-lightning-bolt
   illumination:            "\U0000e92f" # lux
   lightbulb_icon:          "\U0000e908"
@@ -100,7 +101,21 @@ sensor:
             id: grid_power_sensor_label
             text:
               format: "%.2f kW" 
-              args: [id(grid_power_sensor).state / 1000.0]
+              args: [abs(id(grid_power_sensor).state) / 1000.0]
+        - lvgl.label.update:
+            id: grid_power_sensor_icon
+            text_color: !lambda |-
+              if (id(grid_power_sensor).state > 0) {
+                return lv_color_hex(0x5CA848);
+              } else {
+                return lv_color_hex(0xAD448C);
+              }
+            text: !lambda |-
+              if (id(grid_power_sensor).state > 0) {
+                return "${grid_power_import_icon}";
+              } else {
+                return "${grid_power_export_icon}";
+              }
 
 
   # Home Consumption Home Sensor 
@@ -200,15 +215,6 @@ lvgl:
                   x: -140
                   y: 2
                   text: "${air_conditioner_icon}"
-                  text_color: color_steel_blue
-                  text_font: icons_24
-
-              # Lock status
-              - label:
-                  id: lock_status
-                  align: RIGHT_MID
-                  x: -180
-                  text: "${lock_icon}"
                   text_color: color_steel_blue
                   text_font: icons_24
 
@@ -439,8 +445,8 @@ lvgl:
                         id: grid_power_sensor_icon
                         align: LEFT_MID
                         x: 20
-                        text: "${grid_power_icon}"
-                        text_color: color_blue
+                        text_color: 0xAD448C
+                        text: "${grid_power_export_icon}"
                         text_font: mdi_icons_28
                     - label:
                         id: grid_power_sensor_label
@@ -476,6 +482,9 @@ lvgl:
                         text: " "
                         text_color: color_misty_blue
                         text_font: nunito_16
+
+
+
 
         # display lock
         - obj:
@@ -568,7 +577,7 @@ lvgl:
 time:
   - platform: sntp
     id: sntp_time
-    timezone: Europe/Moscow
+    timezone: Europe/Madrid
     servers:
      - ntp0.ntp-servers.net
      - ntp1.ntp-servers.net
@@ -598,7 +607,7 @@ script:
           text: !lambda |-
             static char date_buf[16];
             auto now = id(sntp_time).now();
-            snprintf(date_buf, sizeof(date_buf), "%02d.%02d", now.day_of_month, now.month);
+            snprintf(date_buf, sizeof(date_buf), "%02d/%02d/%04d", now.day_of_month, now.month, now.year);
             return date_buf;
 
   - id: weather_get_and_set_translated_state
@@ -745,9 +754,6 @@ switch:
       - lvgl.button.update: 
           id: settings_page_btn
           clickable: false
-      - lvgl.label.update:
-          id: lock_status
-          text_color: color_green
     turn_off_action:
       - lambda: 'id(display_lock) = false;' 
       - lvgl.button.update: 
@@ -762,6 +768,5 @@ switch:
       - lvgl.button.update: 
           id: settings_page_btn
           clickable: true
-      - lvgl.label.update:
-          id: lock_status
-          text_color: color_steel_blue
+
+
