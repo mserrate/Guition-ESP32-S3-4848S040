@@ -295,11 +295,6 @@
     "\U000F0210", # fan
     "\U000F1B18", # auto
     "\U000F0425", # off
-    "\U000F0A72", # solar-power
-    "\U000F0D3E", # transmission-tower
-    "\U000F192C", # transmisstion-export
-    "\U000F192D", # transmisstion-export
-    "\U000F1903", # home-lightning-bolt
   ]
 
 
@@ -314,6 +309,11 @@
     "\U000F06BB", # shield plane
     "\U000F099E", # shield off
     "\U000F0498", # shield
+    "\U000F0A72", # solar-power
+    "\U000F0D3E", # transmission-tower
+    "\U000F192C", # transmisstion-export
+    "\U000F192D", # transmisstion-export
+    "\U000F1903", # home-lightning-bolt
   ]
 
 - file: "fonts/materialdesignicons-webfont.ttf"

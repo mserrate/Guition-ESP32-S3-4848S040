@@ -391,7 +391,7 @@ lvgl:
             x: -20
             y: 80
             width: 200
-            height: 200
+            height: 280
             align: TOP_RIGHT
             pad_all: 0
             bg_color: color_steel_blue
@@ -406,7 +406,7 @@ lvgl:
               - obj:
                   y: 20
                   width: 160
-                  height: 40
+                  height: 65
                   align: TOP_MID
                   pad_all: 0
                   bg_opa: TRANSP
@@ -420,20 +420,20 @@ lvgl:
                         x: 20
                         text: "${solar_power_icon}"
                         text_color: color_green
-                        text_font: mdi_icons_28
+                        text_font: mdi_icons_40
                     - label:
                         id: solar_power_sensor_label
                         align: LEFT_MID
-                        x: 55
+                        x: 70
                         text: " "
                         text_color: color_misty_blue
-                        text_font: nunito_16
+                        text_font: nunito_20
 
               # humidity
               - obj:
-                  y: 80
+                  y: 100
                   width: 160
-                  height: 40
+                  height: 65
                   align: TOP_MID
                   pad_all: 0
                   bg_opa: TRANSP
@@ -447,20 +447,20 @@ lvgl:
                         x: 20
                         text_color: 0xAD448C
                         text: "${grid_power_export_icon}"
-                        text_font: mdi_icons_28
+                        text_font: mdi_icons_40
                     - label:
                         id: grid_power_sensor_label
                         align: LEFT_MID
-                        x: 55
+                        x: 70
                         text: " "
                         text_color: color_misty_blue
-                        text_font: nunito_16
+                        text_font: nunito_20
 
               # co2
               - obj:
-                  y: 140
+                  y: 180
                   width: 160
-                  height: 40
+                  height: 65
                   align: TOP_MID
                   pad_all: 0
                   bg_opa: TRANSP
@@ -474,104 +474,104 @@ lvgl:
                         x: 20
                         text: "${home_consumption_icon}"
                         text_color: color_yellow
-                        text_font: mdi_icons_28
+                        text_font: mdi_icons_40
                     - label:
                         id: home_consumption_sensor_label
                         align: LEFT_MID
-                        x: 55
+                        x: 70
                         text: " "
                         text_color: color_misty_blue
-                        text_font: nunito_16
+                        text_font: nunito_20
 
 
 
 
-        # display lock
-        - obj:
-            id: home_bg_display_lock
-            x: 260
-            y: 300
-            width: 60
-            height: 60
-            align: TOP_LEFT
-            pad_all: 0
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            border_opa: TRANSP
-            border_width: 0
-            shadow_opa: TRANSP
-            radius: 10
-            widgets:
-              - label:
-                  id: display_lock_btn
-                  align: CENTER
-                  text_font: icons_36
-                  text_color: color_misty_blue
-                  text: "${lock_icon}"
-            on_long_press:
-              then:
-                - if:
-                    condition:
-                      lambda: 'return id(display_lock) == false;'
-                    then:
-                      - switch.turn_on: display_lock_switch
-                    else:
-                      - switch.turn_off: display_lock_switch
+        # # display lock
+        # - obj:
+        #     id: home_bg_display_lock
+        #     x: 260
+        #     y: 300
+        #     width: 60
+        #     height: 60
+        #     align: TOP_LEFT
+        #     pad_all: 0
+        #     bg_color: color_steel_blue
+        #     bg_opa: 20%
+        #     border_opa: TRANSP
+        #     border_width: 0
+        #     shadow_opa: TRANSP
+        #     radius: 10
+        #     widgets:
+        #       - label:
+        #           id: display_lock_btn
+        #           align: CENTER
+        #           text_font: icons_36
+        #           text_color: color_misty_blue
+        #           text: "${lock_icon}"
+        #     on_long_press:
+        #       then:
+        #         - if:
+        #             condition:
+        #               lambda: 'return id(display_lock) == false;'
+        #             then:
+        #               - switch.turn_on: display_lock_switch
+        #             else:
+        #               - switch.turn_off: display_lock_switch
 
-        # display backlight off
-        - obj:
-            id: home_bg_display_backlight_off
-            x: 330
-            y: 300
-            width: 60
-            height: 60
-            align: TOP_LEFT
-            pad_all: 0
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            border_opa: TRANSP
-            border_width: 0
-            shadow_opa: TRANSP
-            radius: 10
-            widgets:
-              - label:
-                  id: display_backlight_off_btn
-                  align: CENTER
-                  text_font: icons_36
-                  text_color: color_misty_blue
-                  text: "${lightbulb_icon}"
-            on_click:
-              - delay: 1s
-              - light.turn_off: display_backlight
-              - lvgl.pause:
+        # # display backlight off
+        # - obj:
+        #     id: home_bg_display_backlight_off
+        #     x: 330
+        #     y: 300
+        #     width: 60
+        #     height: 60
+        #     align: TOP_LEFT
+        #     pad_all: 0
+        #     bg_color: color_steel_blue
+        #     bg_opa: 20%
+        #     border_opa: TRANSP
+        #     border_width: 0
+        #     shadow_opa: TRANSP
+        #     radius: 10
+        #     widgets:
+        #       - label:
+        #           id: display_backlight_off_btn
+        #           align: CENTER
+        #           text_font: icons_36
+        #           text_color: color_misty_blue
+        #           text: "${lightbulb_icon}"
+        #     on_click:
+        #       - delay: 1s
+        #       - light.turn_off: display_backlight
+        #       - lvgl.pause:
 
-        # display info
-        - obj:
-            id: home_bg_display_info
-            x: 400
-            y: 300
-            width: 60
-            height: 60
-            align: TOP_LEFT
-            pad_all: 0
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            border_opa: TRANSP
-            border_width: 0
-            shadow_opa: TRANSP
-            radius: 10
-            widgets:
-              - label:
-                  id: display_info_btn
-                  align: CENTER
-                  text_font: icons_36
-                  text_color: color_misty_blue
-                  text: "${info_icon}"
-            on_press:
-              - lvgl.page.show: 
-                  id: system_info_page
-                  animation: OUT_RIGHT
-                  time: 300ms
+        # # display info
+        # - obj:
+        #     id: home_bg_display_info
+        #     x: 400
+        #     y: 300
+        #     width: 60
+        #     height: 60
+        #     align: TOP_LEFT
+        #     pad_all: 0
+        #     bg_color: color_steel_blue
+        #     bg_opa: 20%
+        #     border_opa: TRANSP
+        #     border_width: 0
+        #     shadow_opa: TRANSP
+        #     radius: 10
+        #     widgets:
+        #       - label:
+        #           id: display_info_btn
+        #           align: CENTER
+        #           text_font: icons_36
+        #           text_color: color_misty_blue
+        #           text: "${info_icon}"
+        #     on_press:
+        #       - lvgl.page.show: 
+        #           id: system_info_page
+        #           animation: OUT_RIGHT
+        #           time: 300ms
 
 
 time:
