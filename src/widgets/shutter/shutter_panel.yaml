@@ -10,114 +10,322 @@ lvgl:
     - id: shutter_group_page
       bg_color: color_slate_blue_gray
       widgets:
-
-        - button:
-            id: ${shutter_widget_name_1}_btn
-            x: 20
-            y: 20
-            width: 210
-            height: 160
+        - obj:
+            id: shutter_scroll_container
+            x: 10
+            y: 5
+            width: 460
+            height: 380
             align: TOP_LEFT
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            shadow_opa: TRANSP
-            radius: 10
+            bg_color: color_slate_blue_gray
+            bg_opa: 0%
+            border_width: 0
+            scrollbar_mode: "auto"
+            pad_all: 5
             widgets:
-              - label:
-                  id: ${shutter_widget_name_1}_shutter
-                  y: 15
-                  align: CENTER
-                  text_color: color_steel_blue
-                  text_font: icons_90
-                  text: "${shutter_close_icon}"
+              # Row 1
+              - button:
+                  id: ${shutter_widget_name_1}_btn
+                  x: 35
+                  y: 16
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_1}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_1}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_1}"
 
-              - label:
-                  id: ${shutter_widget_name_1}_lable_name
-                  align: TOP_MID
-                  text_font: nunito_16
-                  text_color: color_misty_blue
-                  text: "${shutter_label_name_1}"
+              - button:
+                  id: ${shutter_widget_name_2}_btn
+                  x: 180
+                  y: 16
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_2}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_2}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_2}"
 
-        - button:
-            id: ${shutter_widget_name_2}_btn
-            x: -20
-            y: 20
-            width: 210
-            height: 160
-            align: TOP_RIGHT
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            shadow_opa: TRANSP
-            radius: 10
-            widgets:
-              - label:
-                  id: ${shutter_widget_name_2}_shutter
-                  y: 15
-                  align: CENTER
-                  text_color: color_steel_blue
-                  text_font: icons_90
-                  text: "${shutter_close_icon}"
+              - button:
+                  id: ${shutter_widget_name_3}_btn
+                  x: 325
+                  y: 16
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_3}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_3}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_3}"
 
-              - label:
-                  id: ${shutter_widget_name_2}_lable_name
-                  align: TOP_MID
-                  text_font: nunito_16
-                  text_color: color_misty_blue
-                  text: "${shutter_label_name_2}"
+              # Row 2
+              - button:
+                  id: ${shutter_widget_name_4}_btn
+                  x: 35
+                  y: 105
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_4}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_4}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_4}"
 
-        - button:
-            id: ${shutter_widget_name_3}_btn
-            x: 20
-            y: 200
-            width: 210
-            height: 160
-            align: TOP_LEFT
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            shadow_opa: TRANSP
-            radius: 10
-            widgets:
-              - label:
-                  id: ${shutter_widget_name_3}_shutter
-                  y: 15
-                  align: CENTER
-                  text_color: color_steel_blue
-                  text_font: icons_90
-                  text: "${shutter_close_icon}"
+              - button:
+                  id: ${shutter_widget_name_5}_btn
+                  x: 180
+                  y: 105
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_5}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_5}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_5}"
 
-              - label:
-                  id: ${shutter_widget_name_3}_lable_name
-                  align: TOP_MID
-                  text_font: nunito_16
-                  text_color: color_misty_blue
-                  text: "${shutter_label_name_3}"
+              - button:
+                  id: ${shutter_widget_name_6}_btn
+                  x: 325
+                  y: 105
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_6}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_6}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_6}"
 
-        - button:
-            id: ${shutter_widget_name_4}_btn
-            x: -20
-            y: 200
-            width: 210
-            height: 160
-            align: TOP_RIGHT
-            bg_color: color_steel_blue
-            bg_opa: 20%
-            shadow_opa: TRANSP
-            radius: 10
-            widgets:
-              - label:
-                  id: ${shutter_widget_name_4}_shutter
-                  y: 15
-                  align: CENTER
-                  text_color: color_steel_blue
-                  text_font: icons_90
-                  text: "${shutter_close_icon}"
+              # Row 3
+              - button:
+                  id: ${shutter_widget_name_7}_btn
+                  x: 35
+                  y: 194
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_7}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_7}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_7}"
 
-              - label:
-                  id: ${shutter_widget_name_4}_lable_name
-                  align: TOP_MID
-                  text_font: nunito_16
-                  text_color: color_misty_blue
-                  text: "${shutter_label_name_4}"
+              - button:
+                  id: ${shutter_widget_name_8}_btn
+                  x: 180
+                  y: 194
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_8}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_8}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_8}"
+
+              - button:
+                  id: ${shutter_widget_name_9}_btn
+                  x: 325
+                  y: 194
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_9}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_9}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_9}"
+
+              # Row 4
+              - button:
+                  id: ${shutter_widget_name_10}_btn
+                  x: 35
+                  y: 283
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_10}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_10}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_10}"
+
+              - button:
+                  id: ${shutter_widget_name_11}_btn
+                  x: 180
+                  y: 283
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_11}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_11}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_11}"
+
+              - button:
+                  id: ${shutter_widget_name_12}_btn
+                  x: 325
+                  y: 283
+                  width: 110
+                  height: 75
+                  bg_color: color_steel_blue
+                  bg_opa: 20%
+                  shadow_opa: TRANSP
+                  radius: 10
+                  widgets:
+                    - label:
+                        id: ${shutter_widget_name_12}_shutter
+                        y: 2
+                        align: BOTTOM_MID
+                        text_color: color_steel_blue
+                        text_font: icons_38
+                        text: "${shutter_close_icon}"
+                    - label:
+                        id: ${shutter_widget_name_12}_lable_name
+                        align: TOP_MID
+                        text_font: nunito_16
+                        text_color: color_misty_blue
+                        text: "${shutter_label_name_12}"
 
 
 binary_sensor:
@@ -125,14 +333,14 @@ binary_sensor:
     id: ${shutter_widget_name_1}_btn_long_sensor
     widget: ${shutter_widget_name_1}_btn
     on_click:
-    - min_length: 50ms
+    - min_length: 80ms
       max_length: 500ms
       then:
         - homeassistant.service:
             service: cover.toggle
             data:
               entity_id: "${shutter_entity_1}"
-    - min_length: 800ms
+    - min_length: 600ms
       max_length: 3000ms
       then:
         - lvgl.widget.hide: menu_controls_main
@@ -145,14 +353,14 @@ binary_sensor:
     id: ${shutter_widget_name_2}_btn_long_sensor
     widget: ${shutter_widget_name_2}_btn
     on_click:
-    - min_length: 50ms
+    - min_length: 80ms
       max_length: 500ms
       then:
         - homeassistant.service:
             service: cover.toggle
             data:
               entity_id: "${shutter_entity_2}"
-    - min_length: 800ms
+    - min_length: 600ms
       max_length: 3000ms
       then:
         - lvgl.widget.hide: menu_controls_main
@@ -165,14 +373,14 @@ binary_sensor:
     id: ${shutter_widget_name_3}_btn_long_sensor
     widget: ${shutter_widget_name_3}_btn
     on_click:
-    - min_length: 50ms
+    - min_length: 80ms
       max_length: 500ms
       then:
         - homeassistant.service:
             service: cover.toggle
             data:
               entity_id: "${shutter_entity_3}"
-    - min_length: 800ms
+    - min_length: 600ms
       max_length: 3000ms
       then:
         - lvgl.widget.hide: menu_controls_main
@@ -185,19 +393,179 @@ binary_sensor:
     id: ${shutter_widget_name_4}_btn_long_sensor
     widget: ${shutter_widget_name_4}_btn
     on_click:
-    - min_length: 50ms
+    - min_length: 80ms
       max_length: 500ms
       then:
         - homeassistant.service:
             service: cover.toggle
             data:
               entity_id: "${shutter_entity_4}"
-    - min_length: 800ms
+    - min_length: 600ms
       max_length: 3000ms
       then:
         - lvgl.widget.hide: menu_controls_main
         - lvgl.page.show: 
             id: ${shutter_widget_name_4}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_5}_btn_long_sensor
+    widget: ${shutter_widget_name_5}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_5}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_5}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_6}_btn_long_sensor
+    widget: ${shutter_widget_name_6}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_6}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_6}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_7}_btn_long_sensor
+    widget: ${shutter_widget_name_7}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_7}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_7}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_8}_btn_long_sensor
+    widget: ${shutter_widget_name_8}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_8}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_8}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_9}_btn_long_sensor
+    widget: ${shutter_widget_name_9}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_9}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_9}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_10}_btn_long_sensor
+    widget: ${shutter_widget_name_10}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_10}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_10}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_11}_btn_long_sensor
+    widget: ${shutter_widget_name_11}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_11}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_11}_shutter_page
+            animation: OUT_RIGHT
+            time: 300ms
+
+  - platform: lvgl
+    id: ${shutter_widget_name_12}_btn_long_sensor
+    widget: ${shutter_widget_name_12}_btn
+    on_click:
+    - min_length: 80ms
+      max_length: 500ms
+      then:
+        - homeassistant.service:
+            service: cover.toggle
+            data:
+              entity_id: "${shutter_entity_12}"
+    - min_length: 600ms
+      max_length: 3000ms
+      then:
+        - lvgl.widget.hide: menu_controls_main
+        - lvgl.page.show: 
+            id: ${shutter_widget_name_12}_shutter_page
             animation: OUT_RIGHT
             time: 300ms
 
